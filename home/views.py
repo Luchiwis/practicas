@@ -6,6 +6,6 @@ from .models import Post
 
 # Create your views here.
 def index(request):
-    post_list = Post.objects.all() # NO FUNCIONA, INTENTA SUBIENDO DATOS A LA BASE
+    post_list = Post.objects.all()
     context ={"post_list":post_list}
     return render(request, "home.html", context)
