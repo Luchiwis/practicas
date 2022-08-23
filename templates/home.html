@@ -18,10 +18,17 @@
             <th>Fecha de subida</th>
             <th>Tema</th>
         </tr>
-        <tr>
+        {{post_list}}
+        {% for p in posts %}
+        {% comment %} <tr>
             <td>10/10/2010</td>
-            <td><a href="/publicaciones?id=1">Como hago para ser tiktok</a></td> <!-- ME QUEDÉ ACA-->
+            <td><a href="/publicaciones?id=1">Como hago para ser tiktok</a></td>
+        </tr> {% endcomment %}
+        <tr bgcolor="{% cycle 'Silver' 'White' %}">
+            <td>p.fecha</td>
+            <td><a href="/publicaciones?id={{p.id}}">{{p.titulo}}</a></td>
         </tr>
+        {% endfor %}
     </table>
 </body>
 </html>

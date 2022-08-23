@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 import home.views as homeviews
 import testpage.views as testpageviews
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', lambda req: redirect('home/')),
     path('home/', homeviews.index),
-    path('testpage/', testpageviews.index)
+    path('testpage/', testpageviews.index),
+
 ]
